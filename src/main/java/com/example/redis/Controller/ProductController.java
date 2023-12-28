@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.redis.Entity.Product;
-import com.example.redis.Service.ProductService;
+import com.example.redis.Service.IProductService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/Product")
 public class ProductController {
     @Autowired
-    private ProductService productService;
+    private IProductService productService;
 
     @PostMapping
     public ResponseEntity<Product> save(@RequestBody Product product) {
